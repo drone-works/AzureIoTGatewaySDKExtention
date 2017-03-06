@@ -1,4 +1,4 @@
-# Raspberry Pi3(Raspbian) or Ubuntu(14.0.4) Sample 
+# Raspberry Pi3(Raspbian) and Ubuntu(14.0.4) Sample 
 This sample is extention of simulated_device. Extended features are following. 
 - Generate fake temperature data and send it to udp_gateway using UDP.
 
@@ -8,9 +8,9 @@ This sample is extention of simulated_device. Extended features are following.
     * modules/CMakeLists.txt 
     * modules/udp/inc/
         * udp2c.h 
-        * udp.h.h 
+        * udp.h 
     * modules/udp/src/
-        * udp.c 
+        * udp2c.c 
         * udp_receiver.c 
         * udp_sender.c 
     * modules/upd_generator/inc

@@ -1,0 +1,87 @@
+{
+"modules": [
+    {
+      "name": "IotHub",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "./modules/iothub/libiothub.so"
+        }
+      },
+      "args": {
+        "IoTHubName": "FromGWTest",
+        "IoTHubSuffix": "azure-devices.net",
+        "Transport": "HTTP"
+      }
+    },
+    {
+      "name": "mapping",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "./modules/identitymap/libidentity_map.so"
+        }
+      },
+      "args": [
+        {
+          "macAddress": "01:01:01:01:01:01",
+          "deviceId": "Dev01",
+          "deviceKey": "9n6C4IybSttdnH36tVuvShmo6vPWugupoIf+yqyk1wc="
+        }
+      ]
+    },
+    {
+      "name": "UDP2C",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "./modules/udp/libudp.so"
+        }
+      },
+      "args": {
+        "macAddress": "01:01:01:01:01:01",
+        "messagePeriod": 2000
+      }
+    },
+    {
+      "name": "GENERATOR",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "./modules/udp_generator/libudp_generator.so"
+        }
+      },
+      "args": null
+    },
+    {
+      "name": "Logger",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "./modules/logger/liblogger.so"
+        }
+      },
+      "args": {
+        "filename": "deviceCloudUploadGatewaylog.log"
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "*",
+      "sink": "Logger"
+    },
+    {
+      "source": "UDP2C",
+      "sink": "mapping"
+    },
+    {
+      "source": "mapping",
+      "sink": "IotHub"
+    },
+    {
+      "source": "IotHub",
+      "sink": "mapping"
+    }
+  ]
+}
