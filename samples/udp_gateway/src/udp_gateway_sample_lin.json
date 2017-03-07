@@ -9,8 +9,8 @@
         }
       },
       "args": {
-        "IoTHubName": "FromGWTest",
-        "IoTHubSuffix": "azure-devices.net",
+        "IoTHubName": "<<insert here IoTHubName>>",
+        "IoTHubSuffix": "<<insert here IoTHubSuffix>>",
         "Transport": "HTTP"
       }
     },
@@ -25,8 +25,8 @@
       "args": [
         {
           "macAddress": "01:01:01:01:01:01",
-          "deviceId": "Dev01",
-          "deviceKey": "9n6C4IybSttdnH36tVuvShmo6vPWugupoIf+yqyk1wc="
+          "deviceId": "<<insert here deviceId>>",
+          "deviceKey": "<<insert here deviceKey>>"
         }
       ]
     },
