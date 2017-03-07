@@ -9,7 +9,7 @@ This sample is extention of simulated_device. Extended features are following.
 
 * Install Libboost  
 This tutorial assumes you are using the [Libboost](http://www.boost.org/). 
-The UDP module use asio objects which are involved Libboost.
+The UDP modules use asio objects which are involved Libboost.
 You need version 1.54 of Libboost for the modules to work correctly. 
 These instructions make sure that the correct version of Libboost is installed.
 ``` shell
