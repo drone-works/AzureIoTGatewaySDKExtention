@@ -2,8 +2,20 @@
 This sample is extention of simulated_device. Extended features are following. 
 - Generate fake temperature data and send it to udp_gateway using UDP.
 
+
+
 ## Setup 
 * Raspberry Pi3 or ubuntu - please refer [https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md#linux](https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md#linux) 
+
+* Install Libboost  
+This tutorial assumes you are using the [Libboost](http://www.boost.org/). 
+The UDP module use asio objects which are involved Libboost.
+You need version 1.54 of Libboost for the modules to work correctly. 
+These instructions make sure that the correct version of Libboost is installed.
+``` shell
+    sudo apt-get update
+    sudo apt-get install libboost-all-dev
+```
 * Overwrite copy modules and samples directories. Modified and added files are 
     * modules/CMakeLists.txt 
     * modules/udp/inc/ 
